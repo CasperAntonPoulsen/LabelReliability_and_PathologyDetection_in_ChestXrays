@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH --job-name=tensorflow-gpu-condaenv    # Job name
+#SBATCH --output=job.%j.out      # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=2        # Schedule 8 cores (includes hyperthreading)
+#SBATCH --time=01:00:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --partition=brown    # Run on Brown queue
+#SBATCH --gres=gpu
+#SBATCH --mail-type=BEGIN,FAIL,END
+echo "Running on $(hostname):"
+module load Anaconda3
+conda create --name tensorflow_env --yes
+source activate tensorflow_env
+conda install -c "nvidia/label/cuda-12.0.0" cuda-toolkit
+python3 -m pip install nvidia-cudnn-cu12==8.9.4.25 tensorflow==2.13.*
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib/:$CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+# Verify install
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"

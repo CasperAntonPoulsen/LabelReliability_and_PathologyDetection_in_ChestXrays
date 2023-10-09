@@ -1,16 +1,15 @@
 # Imports
 import pandas as pd
-
+from tqdm import tqdm
 import numpy as np
-import matplotlib.pyplot as plt
 from skimage.io import imread
 
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
 # Load the csv's and create the image paths 
-data = pd.read_csv("../../purrlab/padchest/PADCHEST_chest_x_ray_images_labels_160K_01.02.19.csv", index_col=0)
-paths = ['../../purrlab/padchest/' + str(data['ImageDir'][i]) + '/' + str(data['ImageID'][i]) for i in range(len(data))]
+data = pd.read_csv("/home/data_shares/purrlab/padchest/PADCHEST_chest_x_ray_images_labels_160K_01.02.19.csv", index_col=0)
+paths = ['/home/data_shares/purrlab/padchest/' + str(data['ImageDir'][i]) + '/' + str(data['ImageID'][i]) for i in range(len(data))]
 data["Path"] = paths
 
 # preprocessing functions
@@ -57,18 +56,19 @@ def preprocess_img(img_path, printing=False):
     return img
 
 
-for idx, path in enumerate(data["Path"]):
+for idx, path in tqdm(enumerate(data["Path"])):
 
     img = preprocess_img(path, printing=False)
-    
+
     # Adding invalid images to a csv
     if isinstance(img, str):
+        print(path)
         s = data.iloc[idx]
         s_df = pd.DataFrame([s.tolist()], columns=s.index)
         s_df.to_csv("Invalid_images.csv", mode='a', header=False, sep=',')
         continue 
 
-    # Save the preprocessed images   
-    else:
-        new_path = path[:14]+ "padchest-preprocessed/" + path[23:] 
-        tf.keras.utils.save_img(new_path, img, scale=True, data_format="channels_last")
+    # # Save the preprocessed images   
+    # else:
+    #     new_path =  "/Data/padchest-preprocessed/" + path[35:] 
+    #     tf.keras.utils.save_img(new_path, img, scale=True, data_format="channels_last")

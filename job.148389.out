@@ -1,0 +1,9 @@
+Running on desktop23:
+WARNING: A conda environment already exists at '/home/caap/.conda/envs/tensorflow_env'
+Remove existing environment (y/[n])? 
+
+CondaSystemExit: Exiting.
+
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): ...working... slurmstepd: error: *** JOB 148389 ON desktop23 CANCELLED AT 2023-10-09T00:22:53 ***
