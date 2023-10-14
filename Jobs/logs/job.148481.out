@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named nvidia.cudnn
+dirname: missing operand
+Try 'dirname --help' for more information.
+Defaulting to user installation because normal site-packages is not writeable
+Collecting opencv-python
+  Downloading opencv-python-4.8.1.78.tar.gz (92.1 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.13.3 in /usr/local/lib64/python3.6/site-packages (from opencv-python) (1.19.5)
+Building wheels for collected packages: opencv-python
+  Building wheel for opencv-python (pyproject.toml): started
+  Building wheel for opencv-python (pyproject.toml): still running...
+  Building wheel for opencv-python (pyproject.toml): still running...
+slurmstepd: error: *** JOB 148481 ON desktop23 CANCELLED AT 2023-10-09T17:27:25 ***

@@ -1,0 +1,17 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting opencv-python
+  Using cached opencv_python-4.8.1.78-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (61.7 MB)
+Requirement already satisfied: numpy>=1.17.3 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from opencv-python) (1.23.5)
+Installing collected packages: opencv-python
+Successfully installed opencv-python-4.8.1.78
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: tqdm in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (4.64.1)
+/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Segmentation_preprocessing/Segmentation_mask.py:121: DtypeWarning: Columns (1,2) have mixed types. Specify dtype option on import or set low_memory=False.
+  padchest_masks = pd.read_csv(files+ "/OriginalResolution/Padchest.csv")
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Segmentation_preprocessing/Segmentation_mask.py", line 124, in <module>
+    output_row = apply_all_augmentations(row)
+  File "/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Segmentation_preprocessing/Segmentation_mask.py", line 96, in apply_all_augmentations
+    dilation_rate = int(np.round((row["Height"] * row["Width"]) / dilation_factor))
+TypeError: tuple indices must be integers or slices, not str

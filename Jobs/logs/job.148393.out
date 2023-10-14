@@ -1,0 +1,30 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+2023-10-09 00:48:52.925334: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-10-09 00:48:54.188041: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-10-09 00:48:54.188925: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-10-09 00:48:57.966422: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Preprocessing/Preprocessing_images.py:11: DtypeWarning: Columns (19,20) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv("/home/data_shares/purrlab/padchest/PADCHEST_chest_x_ray_images_labels_160K_01.02.19.csv", index_col=0)
+0it [00:00, ?it/s]2023-10-09 00:49:07.401145: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1960] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+1it [00:00,  1.05it/s]2it [00:01,  1.36it/s]3it [00:02,  1.39it/s]4it [00:02,  1.55it/s]5it [00:03,  1.65it/s]6it [00:03,  2.19it/s]7it [00:03,  2.36it/s]8it [00:04,  2.49it/s]9it [00:04,  3.07it/s]10it [00:04,  3.65it/s]11it [00:04,  4.26it/s]12it [00:04,  4.70it/s]13it [00:05,  4.50it/s]14it [00:05,  4.44it/s]15it [00:05,  4.20it/s]16it [00:06,  3.05it/s]17it [00:06,  3.03it/s]18it [00:06,  2.69it/s]19it [00:07,  2.55it/s]20it [00:07,  2.85it/s]21it [00:07,  3.56it/s]22it [00:08,  2.83it/s]23it [00:08,  2.82it/s]24it [00:08,  3.02it/s]25it [00:09,  3.00it/s]26it [00:09,  3.56it/s]27it [00:09,  3.64it/s]28it [00:10,  2.88it/s]29it [00:10,  2.32it/s]30it [00:11,  1.99it/s]31it [00:11,  2.36it/s]32it [00:12,  2.23it/s]33it [00:12,  2.40it/s]34it [00:12,  2.65it/s]35it [00:13,  2.12it/s]36it [00:14,  2.02it/s]37it [00:14,  2.35it/s]38it [00:14,  2.48it/s]39it [00:14,  2.73it/s]40it [00:15,  2.82it/s]41it [00:15,  2.78it/s]42it [00:16,  2.09it/s]43it [00:16,  2.61it/s]44it [00:16,  2.59it/s]45it [00:17,  2.53it/s]46it [00:18,  2.09it/s]47it [00:18,  1.91it/s]48it [00:18,  2.39it/s]49it [00:19,  2.91it/s]50it [00:19,  2.92it/s]51it [00:19,  2.74it/s]52it [00:19,  3.27it/s]53it [00:20,  3.46it/s]54it [00:20,  3.87it/s]55it [00:20,  4.20it/s]56it [00:20,  3.65it/s]57it [00:21,  3.60it/s]58it [00:21,  4.40it/s]59it [00:21,  4.99it/s]60it [00:21,  4.01it/s]61it [00:22,  3.91it/s]62it [00:22,  3.73it/s]63it [00:22,  4.09it/s]64it [00:22,  4.66it/s]65it [00:23,  3.75it/s]66it [00:23,  3.54it/s]67it [00:23,  3.45it/s]68it [00:24,  2.66it/s]69it [00:24,  2.81it/s]70it [00:24,  3.18it/s]71it [00:24,  3.71it/s]72it [00:25,  4.33it/s]73it [00:25,  4.75it/s]74it [00:25,  4.70it/s]75it [00:25,  4.54it/s]76it [00:25,  4.94it/s]77it [00:26,  5.08it/s]78it [00:26,  5.11it/s]79it [00:26,  4.90it/s]80it [00:26,  4.28it/s]81it [00:27,  3.84it/s]82it [00:27,  3.37it/s]83it [00:27,  4.17it/s]84it [00:27,  3.59it/s]85it [00:28,  3.20it/s]86it [00:28,  2.79it/s]87it [00:29,  2.97it/s]88it [00:29,  2.99it/s]89it [00:30,  2.42it/s]90it [00:30,  2.12it/s]91it [00:31,  1.99it/s]92it [00:31,  2.24it/s]93it [00:31,  2.80it/s]94it [00:32,  2.70it/s]95it [00:32,  3.21it/s]96it [00:32,  2.70it/s]97it [00:33,  2.45it/s]98it [00:33,  3.07it/s]99it [00:33,  3.08it/s]100it [00:34,  3.07it/s]101it [00:34,  3.37it/s]102it [00:34,  3.20it/s]103it [00:34,  3.22it/s]104it [00:35,  2.64it/s]105it [00:35,  2.63it/s]106it [00:36,  2.65it/s]107it [00:36,  2.76it/s]slurmstepd: error: *** JOB 148393 ON desktop23 CANCELLED AT 2023-10-09T00:49:43 ***
+108it [00:36,  2.78it/s]
