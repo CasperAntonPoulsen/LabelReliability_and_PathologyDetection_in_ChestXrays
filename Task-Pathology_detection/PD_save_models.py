@@ -53,8 +53,8 @@ finetune_df = finetune_df.sample(frac=1, random_state=321).reset_index(drop=True
 finetune_val_df = finetune_val_df.sample(frac=1, random_state=321).reset_index(drop=True)
 
 # Changing the image paths, so they fit to res24
-finetune_df = change_paths(finetune_df)
-finetune_val_df = change_paths(finetune_val_df)
+#finetune_df = change_paths(finetune_df)
+#finetune_val_df = change_paths(finetune_val_df)
 
 
 img_generator = image.ImageDataGenerator(rescale=1./255)  # Normalizing the data
@@ -143,7 +143,7 @@ def PD_save_models(json_name, h5_name, lr=0.00001):
 # Defining the model hyperparameters
 epochs = 30
 learning_rate_list = [0.00001]
-path = ""
+path = "/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Models/"
 
 # Running the model function
 all_dict = {"Model name": [], "Train acc model1": [], "Train auc model1": [], "Train loss model1": [], "Train acc model2": [], "Train auc model2": [], "Train loss model2": [], "Train acc model3": [], "Train auc model3": [], "Train loss model3": [], "Train acc avg": [], "Train auc avg": [], "Train loss avg": [], "Val acc model1": [], "Val auc model1": [], "Val loss model1": [], "Val acc model2": [], "Val auc model2": [], "Val loss model2": [], "Val acc model3": [], "Val auc model3": [], "Val loss model3": [], "Val acc avg": [], "Val auc avg": [], "Val loss avg": []}

@@ -120,7 +120,7 @@ if __name__ == "__main__":
 
     padchest_masks = pd.read_csv(files+ "/OriginalResolution/Padchest.csv")
 
-    for idx, row in tqdm(padchest_masks.iterrows()):
+    for idx, row in tqdm(padchest_masks[9659:].dropna().iterrows()):
         output_row = apply_all_augmentations(row)
 
         with open("/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Data/Masks/masks.ndjson", "a") as file:
