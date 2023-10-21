@@ -98,3 +98,9 @@ Link: https://arxiv.org/abs/2004.11457
 ### Assessment of Accuracy of an Artificial Intelligence Algorithm to Detect Melanoma in Images of Skin Lesions
 
 Link: https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2752995
+
+### How Businesses Are Using Artificial Intelligence In 2023
+Link: https://www.forbes.com/advisor/business/software/ai-in-business/
+
+###The potential for artificial intelligence in healthcare
+Link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6616181/
