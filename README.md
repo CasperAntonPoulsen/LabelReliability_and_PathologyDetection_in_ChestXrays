@@ -77,3 +77,24 @@ Model : ImageNet
 
 
 ## Segmentation masks reading list
+
+
+### AI recognition of patient race in medical imaging: a modelling study
+Link : [https://ieeexplore.ieee.org/document/9156613](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(22)00063-2/fulltext)
+
+Data : 
+
+Tasks : 
+
+### PadChest Data set
+Link: https://www.sciencedirect.com/science/article/abs/pii/S1361841520301614?via%3Dihub
+
+### CheX data set 
+Link: https://arxiv.org/abs/2307.03293
+
+### Debiasing Skin Lesion Datasets and Models? Not So Fast
+Link: https://arxiv.org/abs/2004.11457
+
+### Assessment of Accuracy of an Artificial Intelligence Algorithm to Detect Melanoma in Images of Skin Lesions
+
+Link: https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2752995
