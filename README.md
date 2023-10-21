@@ -104,3 +104,10 @@ Link: https://www.forbes.com/advisor/business/software/ai-in-business/
 
 ###The potential for artificial intelligence in healthcare
 Link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6616181/
+
+### What Artificial Intelligence Means for Health Care
+Link: https://jamanetwork.com/journals/jama-health-forum/fullarticle/2807176
+
+### Minister vil bruge kunstig intelligens og rollebytte til at løse mangel på radiologer og radiografer
+Link: https://www.dr.dk/nyheder/indland/minister-vil-bruge-kunstig-intelligens-og-rollebytte-til-loese-mangel-paa-radiologer
+
