@@ -64,7 +64,8 @@ def fast_dilate(image, dilation_rate=1):
 
 def bounding_box(image, label=1):
 
-    segmentation = np.where(image == label)
+    _image = image.copy()
+    segmentation = np.where(_image == label)
 
     if len(segmentation) != 0 and len(segmentation[1]) != 0 and len(segmentation[0]) != 0:
         x_min = int(np.min(segmentation[1]))
@@ -72,7 +73,7 @@ def bounding_box(image, label=1):
         y_min = int(np.min(segmentation[0]))
         y_max = int(np.max(segmentation[0]))
 
-    return cv2.rectangle(image, (x_min, y_min), (x_max, y_max), 1,-1)
+    return cv2.rectangle(_image, (x_min, y_min), (x_max, y_max), 1,-1)
 
 def bbox_both_lungs(row, label=1):
 
