@@ -11,9 +11,12 @@ This week Casper is looking into 3 different multi-task setups that he would lik
 - The 2nd is also a parallel architecture but with 3 heads like in (insert citation). The first task would be to a segmentation task of the lungs, the second would be tube detection and the final would be pathology detection
 
 - The 3rd would be a hybrid of a cascade and parallel architecture. The first head performs object detection of the lungs and draws a bounding box around them. This bounding box is then used to crop out the parts of the picture that do not contain lungs, while still keeping the picture sqaure and symmetrical. These cropped images are then fed back into the network to train two heads (TD and PD respectively). 
-The first task could also be segmentation, where everything but the lungs are cropped out. The difference between the previous paper and this architecture would be the task-shared layers between the segmenter and the other tasks, as well as the labels being from ChestXray-14 instead of crowd annotated. 
+The first task could also be segmentation, where everything but the lungs are cropped out. The difference between the previous paper and this architecture would be the task-shared layers between the segmenter and the other tasks, as well as the labels being from ChestXray-14 using the augmentations we made, instead of crowd annotated masks. 
 
 <p align="center"> <img width="100%" src="Images/multi-task-architectures.png">
+
+One important part for me is to explore if any of these architectures gets closer to archieve equalized odds in respect to people with tubes, when performing pathology detection.
+
 
 ### Week 41-42
 
