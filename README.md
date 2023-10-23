@@ -2,6 +2,19 @@
 
 ## Weekly log
 
+### Week 43
+
+This week Casper is looking into 3 different multi-task setups that he would like to investigate. 
+
+- The 1st is a simple parallel 2 head architecture where the first head is trained to perform tube detection and then the second head is trained to perform pathology detection. 
+
+- The 2nd is also a parallel architecture but with 3 heads like in (insert citation). The first task would be to a segmentation task of the lungs, the second would be tube detection and the final would be pathology detection
+
+- The 3rd would be a hybrid of a cascade and parallel architecture. The first head performs object detection of the lungs and draws a bounding box around them. This bounding box is then used to crop out the parts of the picture that do not contain lungs, while still keeping the picture sqaure and symmetrical. These cropped images are then fed back into the network to train two heads (TD and PD respectively). 
+The first task could also be segmentation, where everything but the lungs are cropped out. The difference between the previous paper and this architecture would be the task-shared layers between the segmenter and the other tasks, as well as the labels being from ChestXray-14 instead of crowd annotated. 
+
+<p align="center"> <img width="100%" src="Images/multi-task-architectures.png">
+
 ### Week 41-42
 
 This week we applied the functions we created last week to all ~160k masks from the ChestX-ray14. The images are of varying sizes and aspect ratios, so we came up with a function to standardize dilation rates according to the total number of pixels in the image. We dilate the masks in 4 increments, with the increment size being a function $ max ( Npixels/300000, 1) $ so for a picture of size $3520 x 4280$ the increment size would be $50$, these increments look like this: 
