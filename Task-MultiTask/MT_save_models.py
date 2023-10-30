@@ -42,6 +42,7 @@ def change_paths(df):
 
 train_data_padchest = pd.read_csv('../Data/Data_splits/pathology_detection-train.csv', index_col=0)
 tube_detection_finetuning = pd.read_csv("../Data/Data_splits/tube_detection-finetuning.csv", index_col=0)
+augmented_masks_padchest = pd.read_json("../Data/Masks/augmented_masks.ndjson", orient="records")
 
 # Concatenating the datasets for fine-tuning and shuffling
 finetune_df = pd.concat([train_data_padchest, tube_detection_finetuning])
@@ -109,6 +110,11 @@ def PD_save_models(json_name, h5_name, lr=0.00001):
     input_tensor = densenet_model.output
     x = GlobalAveragePooling2D(keepdims=True)(input_tensor)
     x = Flatten()(x)
+
+    # Segmentation layer
+
+    # Object detection layer
+    
 
     # Pathology detection layer
     PD = Dense(5, activation='sigmoid', name="PD_output")(x)
