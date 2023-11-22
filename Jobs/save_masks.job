@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#SBATCH --job-name=save_masks  # Job name
+#SBATCH --output=logs/job_mask.%j.out      # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=4        # Schedule 8 cores (includes hyperthreading)
+#SBATCH --time=48:00:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --partition=brown    # Run on either the Red or Brown queue
+#SBATCH --mail-type=FAIL,END
+
+module load Anaconda3
+
+source activate multi
+
+
+
+python3 /home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Segmentation_preprocessing/Save_mask.py

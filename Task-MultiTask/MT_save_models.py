@@ -33,7 +33,7 @@ def get_n_hot_encoding(df, labels_to_encode):
 def change_paths(df):
     df = df.copy()
 
-    df["ImagePath"] = ["../../Data/" + df["ImagePath"][idx][11:] for idx in range(len(df))]
+    #df["ImagePath"] = ["../../Data/" + df["ImagePath"][idx][11:] for idx in range(len(df))]
 
     return df
 
@@ -42,7 +42,7 @@ def change_paths(df):
 
 train_data_padchest = pd.read_csv('../Data/Data_splits/pathology_detection-train.csv', index_col=0)
 tube_detection_finetuning = pd.read_csv("../Data/Data_splits/tube_detection-finetuning.csv", index_col=0)
-augmented_masks_padchest = pd.read_json("../Data/Masks/augmented_masks.ndjson", orient="records")
+#augmented_masks_padchest = pd.read_json("../Data/Masks/augmented_masks.ndjson", orient="records")
 
 # Concatenating the datasets for fine-tuning and shuffling
 finetune_df = pd.concat([train_data_padchest, tube_detection_finetuning])

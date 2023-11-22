@@ -49,7 +49,7 @@ def get_n_hot_encoding(df, labels_to_encode):
 ## Data loading and preprocessing
 
 test_padchest = pd.read_csv('../Data/Data_splits/pathology_detection-test.csv', index_col=0)
-annotations = pd.read_csv('../Data/Annotations/Annotations_aggregated.csv', index_col=0)
+annotations = pd.read_csv('../Annotation/Annotations_aggregated.csv', index_col=0)
 
 test_df = pd.concat([test_padchest, annotations])
 img_generator = image.ImageDataGenerator(rescale=1./255)  # Normalizing the data

@@ -11,7 +11,6 @@ from skimage.io import imread
 import tensorflow as tf
 
 from collections import Counter
-from matplotlib import pyplot as plt
 from tensorflow.keras.models import *
 from tensorflow.keras.layers import *
 from tensorflow.keras.optimizers import *
@@ -33,13 +32,14 @@ def change_paths(df, cluster):
         df["Mask_Path"] = ["../../Data/" + df["Mask_Path"][idx][26:] for idx in range(len(df))]
         
     if cluster == "hpc":
-        df["Image_Path"] = ["../../../purrlab_students/" + df["Image_Path"][idx][11:] for idx in len(df)]
-        df["Mask_Path"] = ["../../../purrlab_students/" + df["Mask_Path"][idx][1:] for idx in len(df)]
+        df["Image_Path"] = [df["Image_Path"][idx] for idx in range(len(df))]
+        df["Mask_Path"] = [df["Mask_Path"][idx] for idx in range(len(df))]
+    
     
     return df
     
-seg_train = change_paths(seg_train, "res24")
-seg_val = change_paths(seg_val, "res24")
+seg_train = change_paths(seg_train, "hpc")
+seg_val = change_paths(seg_val, "hpc")
 
 
 mask_array_training = np.stack([np.array(Image.open(path)) for path in seg_train["Mask_Path"]], 0)
@@ -48,11 +48,11 @@ mask_array_testing = np.stack([np.array(Image.open(path)) for path in seg_val["M
 im_array_training = np.stack([np.array(Image.open(path)) for path in seg_train["Image_Path"]], 0)
 im_array_testing = np.stack([np.array(Image.open(path)) for path in seg_val["Image_Path"]], 0)
 
-im_array_training = np.expand_dims(np.asarray(im_array_training, dtype = np.float), axis = 3)
-mask_array_training = np.expand_dims(np.asarray(mask_array_training > 0, dtype = np.float), axis = 3)
+im_array_training = np.expand_dims(np.asarray(im_array_training, dtype = np.float32), axis = 3)
+mask_array_training = np.expand_dims(np.asarray(mask_array_training > 0, dtype = np.float32), axis = 3)
 
-im_array_testing = np.expand_dims(np.asarray(im_array_testing, dtype = np.float), axis = 3)
-mask_array_testing = np.expand_dims(np.asarray(mask_array_testing > 0, dtype = np.float), axis = 3)
+im_array_testing = np.expand_dims(np.asarray(im_array_testing, dtype = np.float32), axis = 3)
+mask_array_testing = np.expand_dims(np.asarray(mask_array_testing > 0, dtype = np.float32), axis = 3)
 
 print(f"Converted arrays to shape {im_array_training.shape} for inputs and {mask_array_training.shape} for targets.")
 
@@ -127,7 +127,7 @@ def unet(pretrained_weights = None,input_size = (512,512,1), lr=1e-4):
 
 
 epochs = 200
-batch_size = 32
+batch_size = 16
 learning_rate = 0.0001
 
 model = unet(input_size = (512, 512, 1), lr=learning_rate)
