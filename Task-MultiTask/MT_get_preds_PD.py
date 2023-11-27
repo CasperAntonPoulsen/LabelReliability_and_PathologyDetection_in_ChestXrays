@@ -49,45 +49,52 @@ def get_n_hot_encoding(df, labels_to_encode):
 ## Data loading and preprocessing
 
 test_padchest = pd.read_csv('../Data/Data_splits/pathology_detection-test.csv', index_col=0)
-annotations = pd.read_csv('../Data/Annotations/Annotations_aggregated.csv', index_col=0)
+#annotations = pd.read_csv('../Data/Annotations/Annotations_aggregated.csv', index_col=0)
 
-test_df = pd.concat([test_padchest, annotations])
+#test_df = pd.concat([test_padchest, annotations])
 
 img_generator = image.ImageDataGenerator(rescale=1./255)  # Normalizing the data
 
-generator_test_padchest = img_generator.flow_from_dataframe(dataframe = test_df, 
+generator_test_padchest = img_generator.flow_from_dataframe(dataframe = test_padchest, 
     x_col='ImagePath',
-    y_col='Chest_drain',
+    y_col='Pneumothorax',
     target_size=(512, 512),
     classes=None,
     class_mode='raw',
-    batch_size=32,
+    batch_size=256,
     shuffle=False,
     validate_filenames=False)
 
 
 ### To store the predictions
-path = "Saved_models/"
-all_dict = {"Model_name": [], "Val_data": [], "Preds_model1": [], "Preds_model2": [], "Preds_model3": []}
+path = "/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Models/"
+all_dict = {"Model_name": [], "Val_data": [], "Preds": []}
 df_acc = pd.DataFrame(data=all_dict)
-filename = "Predictions/MT_preds_PD.csv"
+filename = "/home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Predictions/MT_preds_PD.csv"
 df_acc.to_csv(filename, mode='a', sep=',')
 
 
 ## Get predictions
 
-json = [path+'MT_model1.json', path+'MT_model2.json', path+'MT_model3.json']
-h5 = [path+'MT_model1.h5', path+'MT_model2.h5', path+'MT_model3.h5']
+gamma_list = [0.2, 0.4, 0.5, 0.6]
+
+
+
+#json = [path+'MT_model1.json', path+'MT_model2.json', path+'MT_model3.json']
+#h5 = [path+'MT_model1.h5', path+'MT_model2.h5', path+'MT_model3.h5']
 
 ### Adding the predictions to the dataframe
-all_dict = {"Model_name": [], "Val_data": [], "Preds_model1": [], "Preds_model2": [], "Preds_model3": []}
-all_dict["Model_name"].append('MT, Multiclass')
-all_dict["Val_data"].append('PadChest, PD')
+all_dict = {"Model_name": [], "Val_data": [], "Preds": [] }
 
-for i in range(len(json)):
-    model = load_model(json[i], h5[i])
+
+for gamma in gamma_list:
+    model = load_model(path + f"MT_model1_gamma_{gamma}_op.json", path + f"MT_model1_gamma_{gamma}_op.h5")
     pred = make_predictions(model, generator_test_padchest)[0]
-    k = "Preds_model" + str(i + 1)
+
+
+    all_dict["Model_name"].append(f'MT, Multiclass, gamma {gamma}')
+    all_dict["Val_data"].append('PadChest, PD')
+    k = "Preds"
     all_dict[k].append(pred)
 
 
