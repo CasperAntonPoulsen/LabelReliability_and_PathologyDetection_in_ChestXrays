@@ -1,0 +1,8 @@
+Loaded module: cuda/12.2
+/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/layers/layer.py:358: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  0%|          | 0/52 [00:00<?, ?it/s]  0%|          | 0/52 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/get_object_preds.py", line 43, in <module>
+    input_images.append(np.expand_dims(keras.utils.img_to_array(image.resize((224,224)))))
+TypeError: expand_dims() missing 1 required positional argument: 'axis'

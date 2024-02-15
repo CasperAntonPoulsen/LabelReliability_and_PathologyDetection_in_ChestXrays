@@ -1,0 +1,19 @@
+Loaded module: cuda/12.2
+  0%|          | 0/100 [00:00<?, ?it/s] 25%|██▌       | 25/100 [00:00<00:00, 239.66it/s] 50%|█████     | 50/100 [00:00<00:00, 244.68it/s] 75%|███████▌  | 75/100 [00:00<00:00, 246.37it/s]100%|██████████| 100/100 [00:00<00:00, 245.38it/s]100%|██████████| 100/100 [00:00<00:00, 244.88it/s]
+Skipping variable loading for optimizer 'adam', because it has 730 variables whereas the saved optimizer has 22 variables. 
+2024-02-13 17:15:17.024478: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-02-13 17:15:17.024545: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-02-13 17:15:17.025514: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-02-13 17:15:18.246965: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Your TensorFlow version is newer than 2.4.0 and so graph support has been removed in eager mode and some static graphs may not be supported. See PR #1483 for discussion.
+2024-02-13 17:15:59.641637: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2348] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 9.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+2024-02-13 17:15:59.664984: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2348] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 9.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+2024-02-13 17:15:59.668707: W tensorflow/core/common_runtime/gpu/gpu_bfc_allocator.cc:47] Overriding orig_value setting because the TF_FORCE_GPU_ALLOW_GROWTH environment variable is set. Original config value was 0.
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 80, in <module>
+    # e = shap.DeepExplainer(model, background)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/__init__.py", line 84, in __init__
+    self.explainer = TFDeep(model, data, session, learning_phase_flags)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 173, in __init__
+    noutputs = self.model_output.shape.as_list()[1]
+AttributeError: 'tuple' object has no attribute 'as_list'

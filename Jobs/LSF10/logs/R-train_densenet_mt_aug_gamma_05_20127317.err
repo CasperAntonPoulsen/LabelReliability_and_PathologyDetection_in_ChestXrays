@@ -1,0 +1,9 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models_bbox_aug.py", line 161, in <module>
+    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in finetune_df["ImagePath"]])
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models_bbox_aug.py", line 161, in <listcomp>
+    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in finetune_df["ImagePath"]])
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/image_utils.py", line 235, in load_img
+    with open(path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/padchest-preprocessed/26/216840111366964013962490064942014113131059349_01-187-034.png'

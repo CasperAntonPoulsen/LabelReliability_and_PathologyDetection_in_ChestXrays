@@ -1,0 +1,66 @@
+2023-10-15 02:48:23.874003: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2023-10-15 02:48:37.747110: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2023-10-15 02:48:38.254116: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:03:00.0 name: NVIDIA GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-10-15 02:48:38.254182: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2023-10-15 02:48:38.267348: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2023-10-15 02:48:38.278127: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2023-10-15 02:48:38.282311: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2023-10-15 02:48:38.289658: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2023-10-15 02:48:38.295126: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2023-10-15 02:48:38.308538: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2023-10-15 02:48:38.309126: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2023-10-15 02:48:50.754237: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:03:00.0 name: NVIDIA GeForce GTX 1080 Ti computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 28 deviceMemorySize: 10.91GiB deviceMemoryBandwidth: 451.17GiB/s
+2023-10-15 02:48:50.754508: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2023-10-15 02:48:50.754572: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcublas.so.10
+2023-10-15 02:48:50.754614: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2023-10-15 02:48:50.754653: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2023-10-15 02:48:50.754693: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusolver.so.10
+2023-10-15 02:48:50.754731: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcusparse.so.10
+2023-10-15 02:48:50.754769: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudnn.so.7
+2023-10-15 02:48:50.755362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1858] Adding visible gpu devices: 0
+2023-10-15 02:48:50.755424: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2023-10-15 02:48:51.200737: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2023-10-15 02:48:51.200804: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0 
+2023-10-15 02:48:51.200826: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N 
+2023-10-15 02:48:51.202244: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1402] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10372 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce GTX 1080 Ti, pci bus id: 0000:03:00.0, compute capability: 6.1)
+2023-10-15 02:48:51.203342: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2023-10-15 02:48:51.267828: F ./tensorflow/core/kernels/random_op_gpu.h:232] Non-OK-status: GpuLaunchKernel(FillPhiloxRandomKernelLaunch<Distribution>, num_blocks, block_size, 0, d.stream(), gen, data, size, dist) status: Internal: no kernel image is available for execution on the device
+[desktop21:19663] *** Process received signal ***
+[desktop21:19663] Signal: Aborted (6)
+[desktop21:19663] Signal code:  (-6)
+[desktop21:19663] [ 0] /lib64/libpthread.so.0(+0xf5f0)[0x7fc2d413b5f0]
+[desktop21:19663] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x7fc2d3b91337]
+[desktop21:19663] [ 2] /lib64/libc.so.6(abort+0x148)[0x7fc2d3b92a28]
+[desktop21:19663] [ 3] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0xcc5e967)[0x7fc2b1c43967]
+[desktop21:19663] [ 4] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow7functor16FillPhiloxRandomIN5Eigen9GpuDeviceENS_6random19UniformDistributionINS4_12PhiloxRandomEfEEEclEPNS_15OpKernelContextERKS3_S6_PfxS7_+0x1e8)[0x7fc2ad207a58]
+[desktop21:19663] [ 5] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x821f53a)[0x7fc2ad20453a]
+[desktop21:19663] [ 6] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/../libtensorflow_framework.so.2(_ZN10tensorflow13BaseGPUDevice7ComputeEPNS_8OpKernelEPNS_15OpKernelContextE+0x247)[0x7fc294a2cf77]
+[desktop21:19663] [ 7] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow17KernelAndDeviceOp3RunEPNS_19ScopedStepContainerERKNS_15EagerKernelArgsEPSt6vectorINS_6TensorESaIS7_EEPNS_19CancellationManagerERKN4absl14lts_2020_02_258optionalINS_25EagerRemoteFunctionParamsEEE+0x73f)[0x7fc2a8f9c7df]
+[desktop21:19663] [ 8] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow18EagerKernelExecuteEPNS_12EagerContextERKN4absl14lts_2020_02_2513InlinedVectorIPNS_12TensorHandleELm4ESaIS6_EEERKNS3_8optionalINS_25EagerRemoteFunctionParamsEEERKSt10unique_ptrINS_15KernelAndDeviceENS_4core15RefCountDeleterEEPNS_14GraphCollectorEPNS_19CancellationManagerENS3_4SpanIS6_EE+0x1b8)[0x7fc2a8f62c18]
+[desktop21:19663] [ 9] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow11ExecuteNode3RunEv+0x18b)[0x7fc2a8f637cb]
+[desktop21:19663] [10] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow13EagerExecutor11SyncExecuteEPNS_9EagerNodeE+0x1c7)[0x7fc2a8f964f7]
+[desktop21:19663] [11] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(+0x3f7b79c)[0x7fc2a8f6079c]
+[desktop21:19663] [12] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow12EagerExecuteEPNS_14EagerOperationEPPNS_12TensorHandleEPi+0x144)[0x7fc2a8f621c4]
+[desktop21:19663] [13] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_ZN10tensorflow14EagerOperation7ExecuteEN4absl14lts_2020_02_254SpanIPNS_20AbstractTensorHandleEEEPi+0x166)[0x7fc2a8f54946]
+[desktop21:19663] [14] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(TFE_Execute+0x28)[0x7fc2a8e71918]
+[desktop21:19663] [15] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so(_Z24TFE_Py_FastPathExecute_CP7_object+0x2051)[0x7fc2a8e42841]
+[desktop21:19663] [16] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tfe.so(+0x13af4a)[0x7fc28fcf7f4a]
+[desktop21:19663] [17] /opt/itu/easybuild/software/TensorFlow/2.3.1-fosscuda-2019b-Python-3.7.4/lib/python3.7/site-packages/tensorflow/python/_pywrap_tfe.so(+0x161c8a)[0x7fc28fd1ec8a]
+[desktop21:19663] [18] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyMethodDef_RawFastCallKeywords+0x283)[0x7fc2d4bf9373]
+[desktop21:19663] [19] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyCFunction_FastCallKeywords+0x20)[0x7fc2d4bf94d0]
+[desktop21:19663] [20] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalFrameDefault+0x134a)[0x7fc2d4c5b5ca]
+[desktop21:19663] [21] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalCodeWithName+0x1e6)[0x7fc2d4bb25b6]
+[desktop21:19663] [22] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyFunction_FastCallKeywords+0x2a1)[0x7fc2d4bf8ab1]
+[desktop21:19663] [23] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalFrameDefault+0x1b0a)[0x7fc2d4c5bd8a]
+[desktop21:19663] [24] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalCodeWithName+0x1e6)[0x7fc2d4bb25b6]
+[desktop21:19663] [25] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyFunction_FastCallDict+0x2c0)[0x7fc2d4bb3810]
+[desktop21:19663] [26] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalFrameDefault+0x284e)[0x7fc2d4c5cace]
+[desktop21:19663] [27] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalCodeWithName+0x1e6)[0x7fc2d4bb25b6]
+[desktop21:19663] [28] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyFunction_FastCallKeywords+0x2a1)[0x7fc2d4bf8ab1]
+[desktop21:19663] [29] /opt/itu/easybuild/software/Python/3.7.4-GCCcore-8.3.0/lib/libpython3.7m.so.1.0(_PyEval_EvalFrameDefault+0x1b0a)[0x7fc2d4c5bd8a]
+[desktop21:19663] *** End of error message ***
+/var/spool/slurm/d/job148887/slurm_script: line 13: 19663 Aborted                 python3 /home/caap/LabelReliability_and_PathologyDetection_in_ChestXrays/Task-Pathology_detection/PD_save_models.py

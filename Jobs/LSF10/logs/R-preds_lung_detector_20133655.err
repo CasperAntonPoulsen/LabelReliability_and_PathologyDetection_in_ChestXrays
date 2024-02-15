@@ -1,0 +1,11 @@
+Loaded module: cuda/12.2
+/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/layers/layer.py:358: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/get_object_preds.py", line 29, in <module>
+    preds = model.predict(input_images, batch_size=512, verbose=2)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/models/functional.py", line 274, in _adjust_input_rank
+    raise ValueError(
+ValueError: Invalid input shape for input Traced<ShapedArray(float32[224,224,3])>with<DynamicJaxprTrace(level=1/0)>. Expected shape (None, 224, 224, 3), but input has incompatible shape (224, 224, 3)

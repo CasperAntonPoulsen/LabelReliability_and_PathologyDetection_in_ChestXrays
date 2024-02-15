@@ -1,0 +1,228 @@
+Mon Feb 12 01:56:10 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H100 PCIe               On  | 00000000:41:00.0 Off |                    0 |
+| N/A   24C    P0              45W / 350W |      0MiB / 81559MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Loading and resizing
+Predicting
+1/1 - 5s - 5s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 433ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 450ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 336ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 330ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 404ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 301ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 297ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 298ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 274ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 295ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 289ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 295ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 294ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 291ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 291ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 290ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 297ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 290ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 287ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 301ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 309ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 282ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 411ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 300ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 300ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 324ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 415ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 299ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 307ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 289ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 288ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 0s - 305ms/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving
+Loading and resizing
+Predicting
+1/1 - 2s - 2s/step
+Cropping and saving

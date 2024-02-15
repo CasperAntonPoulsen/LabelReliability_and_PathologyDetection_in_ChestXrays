@@ -1,0 +1,43 @@
+Loaded module: cuda/12.2
+/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/layers/layer.py:358: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+2024-02-12 01:38:46.538902: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 588.0KiB (rounded to 602112)requested by op 
+2024-02-12 01:38:46.577589: W external/tsl/tsl/framework/bfc_allocator.cc:497] ****************************************************************************************************
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/get_object_preds.py", line 25, in <module>
+    preds = model.predict(input_images, batch_size=512, verbose=2)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/tree/__init__.py", line 435, in map_structure
+    [func(*args) for args in zip(*map(flatten, structures))])
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/tree/__init__.py", line 435, in <listcomp>
+    [func(*args) for args in zip(*map(flatten, structures))])
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 2206, in asarray
+    return array(a, dtype=dtype, copy=False, order=order)  # type: ignore
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/numpy/lax_numpy.py", line 2109, in array
+    return jax.device_put(object)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/api.py", line 2520, in device_put
+    return tree_map(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/tree_util.py", line 244, in tree_map
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/tree_util.py", line 244, in <genexpr>
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/api.py", line 2521, in <lambda>
+    lambda y: dispatch.device_put_p.bind(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 444, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 447, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 935, in process_primitive
+    return primitive.impl(*tracers, **params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/dispatch.py", line 445, in _device_put_impl
+    return _put_x(x, sh, aval, device is not None)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/dispatch.py", line 335, in _put_x
+    return result_handler(pxla.shard_arg(x, list(map_), list(map_.values()), s))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/interpreters/pxla.py", line 128, in shard_arg
+    return shard_arg_handlers[type(arg)](arg, devices, arg_indices, sharding)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/interpreters/pxla.py", line 172, in _shard_array
+    return batched_device_put(aval, sharding, [x[i] for i in indices], devices)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/interpreters/pxla.py", line 192, in batched_device_put
+    return xc.batched_device_put(aval, sharding, xs, devices, committed)  # type: ignore
+jaxlib.xla_extension.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 602112 bytes.

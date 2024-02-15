@@ -1,0 +1,13 @@
+Loaded module: cuda/12.2
+/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/layers/layer.py:358: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/get_object_preds.py", line 21, in <module>
+    input_images.append(keras.utils.load_img(input_path))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/image_utils.py", line 252, in load_img
+    img = img.convert("RGB")
+  File "/usr/lib64/python3.9/site-packages/PIL/Image.py", line 911, in convert
+    self.load()
+  File "/usr/lib64/python3.9/site-packages/PIL/ImageFile.py", line 269, in load
+    n, err_code = decoder.decode(b)
+KeyboardInterrupt

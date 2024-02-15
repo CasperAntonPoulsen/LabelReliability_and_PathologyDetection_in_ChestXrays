@@ -1,0 +1,94 @@
+Loaded module: cuda/12.2
+  0%|          | 0/100 [00:00<?, ?it/s] 23%|██▎       | 23/100 [00:00<00:00, 224.42it/s] 48%|████▊     | 48/100 [00:00<00:00, 235.04it/s] 73%|███████▎  | 73/100 [00:00<00:00, 238.91it/s] 98%|█████████▊| 98/100 [00:00<00:00, 240.57it/s]100%|██████████| 100/100 [00:00<00:00, 238.31it/s]
+Skipping variable loading for optimizer 'adam', because it has 730 variables whereas the saved optimizer has 22 variables. 
+  0%|          | 0/498 [00:00<?, ?it/s]  2%|▏         | 12/498 [00:18<12:41,  1.57s/it]  9%|▉         | 44/498 [00:41<06:43,  1.13it/s]2024-02-13 17:34:56.785638: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 488.49MiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:34:56.808173: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 488.50MiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:35:06.994602: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 256.00MiB (rounded to 268435456)requested by op 
+2024-02-13 17:35:06.995624: W external/tsl/tsl/framework/bfc_allocator.cc:497] ****************************************************************************************************
+2024-02-13 17:35:06.995703: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2732] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 268435456 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  256.00MiB
+              constant allocation:         0B
+        maybe_live_out allocation:  256.00MiB
+     preallocated temp allocation:         0B
+                 total allocation:  512.00MiB
+              total fragmentation:         0B (0.00%)
+Peak buffers:
+	Buffer 1:
+		Size: 256.00MiB
+		Entry Parameter Subshape: f32[64,32,32,1024]
+		==========================
+
+	Buffer 2:
+		Size: 256.00MiB
+		Operator: op_name="jit(fn)/jit(main)/add" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=549
+		XLA Label: fusion
+		Shape: f32[64,32,32,1024]
+		==========================
+
+	Buffer 3:
+		Size: 4.0KiB
+		Entry Parameter Subshape: f32[1,1,1,1024]
+		==========================
+
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 87, in <module>
+    shap_values = explainer(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 128, in __call__
+    return super().__call__(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_explainer.py", line 264, in __call__
+    row_result = self.explain_row(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 176, in explain_row
+    self.owen(fm, self._curr_base_value, f11, max_evals - 2, outputs, fixed_context, batch_size, silent)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 288, in owen
+    fout = fm(batch_masks)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/utils/_masked_model.py", line 69, in __call__
+    return self._full_masking_call(masks, batch_size=batch_size)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/utils/_masked_model.py", line 146, in _full_masking_call
+    outputs = self.model(*joined_masked_inputs)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/models/_model.py", line 28, in __call__
+    out = self.inner_model(*args)
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 75, in f
+    return model(tmp)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/numpy/array_methods.py", line 271, in deferring_binary_op
+    return binary_op(*args)
+jaxlib.xla_extension.XlaRuntimeError: Exception encountered when calling BatchNormalization.call().
+
+[1mRESOURCE_EXHAUSTED: Out of memory while trying to allocate 268435456 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  256.00MiB
+              constant allocation:         0B
+        maybe_live_out allocation:  256.00MiB
+     preallocated temp allocation:         0B
+                 total allocation:  512.00MiB
+              total fragmentation:         0B (0.00%)
+Peak buffers:
+	Buffer 1:
+		Size: 256.00MiB
+		Entry Parameter Subshape: f32[64,32,32,1024]
+		==========================
+
+	Buffer 2:
+		Size: 256.00MiB
+		Operator: op_name="jit(fn)/jit(main)/add" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=549
+		XLA Label: fusion
+		Shape: f32[64,32,32,1024]
+		==========================
+
+	Buffer 3:
+		Size: 4.0KiB
+		Entry Parameter Subshape: f32[1,1,1,1024]
+		==========================
+
+[0m
+
+Arguments received by BatchNormalization.call():
+  • inputs=jnp.ndarray(shape=(64, 32, 32, 1024), dtype=float32)
+  • training=None
+  • mask=None
+                                                

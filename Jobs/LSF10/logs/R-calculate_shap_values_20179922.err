@@ -1,0 +1,39 @@
+Loaded module: cuda/12.2
+2024-02-13 16:59:18.085662: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-02-13 16:59:18.120595: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-02-13 16:59:18.120644: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-02-13 16:59:18.121645: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-02-13 16:59:18.127121: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-02-13 16:59:19.242423: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+  0%|          | 0/100 [00:00<?, ?it/s] 24%|██▍       | 24/100 [00:00<00:00, 239.92it/s] 49%|████▉     | 49/100 [00:00<00:00, 243.49it/s] 74%|███████▍  | 74/100 [00:00<00:00, 240.48it/s] 99%|█████████▉| 99/100 [00:00<00:00, 243.31it/s]100%|██████████| 100/100 [00:00<00:00, 242.56it/s]
+2024-02-13 16:59:26.295449: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2348] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 9.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+2024-02-13 16:59:26.325850: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2348] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 9.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+2024-02-13 16:59:26.727238: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 78750 MB memory:  -> device: 0, name: NVIDIA H100 PCIe, pci bus id: 0000:41:00.0, compute capability: 9.0
+Skipping variable loading for optimizer 'adam', because it has 730 variables whereas the saved optimizer has 22 variables. 
+Your TensorFlow version is newer than 2.4.0 and so graph support has been removed in eager mode and some static graphs may not be supported. See PR #1483 for discussion.
+2024-02-13 16:59:35.717652: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8902
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 82, in <module>
+    shap_values = e.shap_values(x_test_pd[0:1])
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/__init__.py", line 125, in shap_values
+    return self.explainer.shap_values(X, ranked_outputs, output_rank_order, check_additivity=check_additivity)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 312, in shap_values
+    sample_phis = self.run(self.phi_symbolic(feature_ind), self.model_inputs, joint_input)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 363, in run
+    return self.execute_with_overridden_gradients(anon)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 399, in execute_with_overridden_gradients
+    out = f()
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 356, in anon
+    final_out = out(inputs)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/autograph_util.py", line 52, in autograph_handler
+    raise e.ag_error_metadata.to_exception(e)
+tensorflow.python.autograph.impl.api.StagingError: in user code:
+
+    File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 252, in grad_graph  *
+        x_grad = tape.gradient(out, shap_rAnD)
+
+    LookupError: gradient registry has no entry for: shap_AddV2
+

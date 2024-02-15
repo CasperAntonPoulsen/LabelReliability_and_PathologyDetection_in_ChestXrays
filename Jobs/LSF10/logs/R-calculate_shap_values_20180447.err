@@ -1,0 +1,164 @@
+Loaded module: cuda/12.2
+  0%|          | 0/100 [00:00<?, ?it/s] 24%|██▍       | 24/100 [00:00<00:00, 238.84it/s] 49%|████▉     | 49/100 [00:00<00:00, 244.25it/s] 74%|███████▍  | 74/100 [00:00<00:00, 245.25it/s] 99%|█████████▉| 99/100 [00:00<00:00, 246.62it/s]100%|██████████| 100/100 [00:00<00:00, 245.27it/s]
+Skipping variable loading for optimizer 'adam', because it has 730 variables whereas the saved optimizer has 22 variables. 
+  0%|          | 0/498 [00:00<?, ?it/s]  2%|▏         | 12/498 [00:18<12:26,  1.54s/it]  9%|▉         | 44/498 [00:40<06:34,  1.15it/s]2024-02-13 17:31:24.712238: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712342: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712358: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712373: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712387: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712401: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712415: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712428: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712441: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:24.712455: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.02GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-02-13 17:31:35.780977: W external/tsl/tsl/framework/bfc_allocator.cc:485] Allocator (GPU_0_bfc) ran out of memory trying to allocate 640.14MiB (rounded to 671236608)requested by op 
+2024-02-13 17:31:35.781893: W external/tsl/tsl/framework/bfc_allocator.cc:497] ****************************************************************************************************
+2024-02-13 17:31:35.782735: E external/xla/xla/pjrt/pjrt_stream_executor_client.cc:2732] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 671236480 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  256.14MiB
+              constant allocation:         0B
+        maybe_live_out allocation:   64.00MiB
+     preallocated temp allocation:  640.14MiB
+  preallocated temp fragmentation:       109B (0.00%)
+                 total allocation:  960.28MiB
+              total fragmentation:   63.86MiB (6.65%)
+Peak buffers:
+	Buffer 1:
+		Size: 320.14MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: u8[335691923]
+		==========================
+
+	Buffer 2:
+		Size: 256.00MiB
+		XLA Label: fusion
+		Shape: f32[128,128,64,64]
+		==========================
+
+	Buffer 3:
+		Size: 256.00MiB
+		Entry Parameter Subshape: f32[128,64,64,128]
+		==========================
+
+	Buffer 4:
+		Size: 64.00MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: f32[128,32,64,64]
+		==========================
+
+	Buffer 5:
+		Size: 64.00MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: fusion
+		Shape: f32[128,64,64,32]
+		==========================
+
+	Buffer 6:
+		Size: 144.0KiB
+		Entry Parameter Subshape: f32[3,3,128,32]
+		==========================
+
+	Buffer 7:
+		Size: 16B
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: (f32[128,32,64,64], u8[335691923])
+		==========================
+
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 87, in <module>
+    shap_values = explainer(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 128, in __call__
+    return super().__call__(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_explainer.py", line 264, in __call__
+    row_result = self.explain_row(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 176, in explain_row
+    self.owen(fm, self._curr_base_value, f11, max_evals - 2, outputs, fixed_context, batch_size, silent)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_partition.py", line 288, in owen
+    fout = fm(batch_masks)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/utils/_masked_model.py", line 69, in __call__
+    return self._full_masking_call(masks, batch_size=batch_size)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/utils/_masked_model.py", line 146, in _full_masking_call
+    outputs = self.model(*joined_masked_inputs)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/models/_model.py", line 28, in __call__
+    out = self.inner_model(*args)
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 75, in f
+    return model(tmp)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/lax/convolution.py", line 161, in conv_general_dilated
+    return conv_general_dilated_p.bind(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 444, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 447, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 935, in process_primitive
+    return primitive.impl(*tracers, **params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/dispatch.py", line 87, in apply_primitive
+    outs = fun(*args)
+ValueError: Exception encountered when calling Conv2D.call().
+
+[1mRESOURCE_EXHAUSTED: Out of memory while trying to allocate 671236480 bytes.
+BufferAssignment OOM Debugging.
+BufferAssignment stats:
+             parameter allocation:  256.14MiB
+              constant allocation:         0B
+        maybe_live_out allocation:   64.00MiB
+     preallocated temp allocation:  640.14MiB
+  preallocated temp fragmentation:       109B (0.00%)
+                 total allocation:  960.28MiB
+              total fragmentation:   63.86MiB (6.65%)
+Peak buffers:
+	Buffer 1:
+		Size: 320.14MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: u8[335691923]
+		==========================
+
+	Buffer 2:
+		Size: 256.00MiB
+		XLA Label: fusion
+		Shape: f32[128,128,64,64]
+		==========================
+
+	Buffer 3:
+		Size: 256.00MiB
+		Entry Parameter Subshape: f32[128,64,64,128]
+		==========================
+
+	Buffer 4:
+		Size: 64.00MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: f32[128,32,64,64]
+		==========================
+
+	Buffer 5:
+		Size: 64.00MiB
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: fusion
+		Shape: f32[128,64,64,32]
+		==========================
+
+	Buffer 6:
+		Size: 144.0KiB
+		Entry Parameter Subshape: f32[3,3,128,32]
+		==========================
+
+	Buffer 7:
+		Size: 16B
+		Operator: op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((1, 1), (1, 1)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275
+		XLA Label: custom-call
+		Shape: (f32[128,32,64,64], u8[335691923])
+		==========================
+
+[0m
+
+Arguments received by Conv2D.call():
+  • inputs=jnp.ndarray(shape=(128, 64, 64, 128), dtype=float32)
+                                                

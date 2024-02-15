@@ -1,0 +1,40 @@
+Loaded module: cuda/12.1
+Traceback (most recent call last):
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/lib/__init__.py", line 26, in <module>
+    import jaxlib as jaxlib
+ModuleNotFoundError: No module named 'jaxlib'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/VisionTransformer.py", line 7, in <module>
+    import keras
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/__init__.py", line 8, in <module>
+    from keras import _tf_keras
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/_tf_keras/__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/_tf_keras/keras/__init__.py", line 8, in <module>
+    from keras import activations
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/activations/__init__.py", line 8, in <module>
+    from keras.src.activations import deserialize
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/activations/__init__.py", line 3, in <module>
+    from keras.src.activations.activations import elu
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/activations/activations.py", line 1, in <module>
+    from keras.src import backend
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/__init__.py", line 35, in <module>
+    from keras.src.backend.jax import *  # noqa: F403
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/__init__.py", line 1, in <module>
+    from keras.src.backend.jax import core
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/core.py", line 3, in <module>
+    import jax
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/__init__.py", line 39, in <module>
+    from jax import config as _config_module
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/config.py", line 15, in <module>
+    from jax._src.config import config as _deprecated_config  # noqa: F401
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/config.py", line 28, in <module>
+    from jax._src import lib
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/lib/__init__.py", line 28, in <module>
+    raise ModuleNotFoundError(
+ModuleNotFoundError: jax requires jaxlib to be installed. See https://github.com/google/jax#installation for installation instructions.

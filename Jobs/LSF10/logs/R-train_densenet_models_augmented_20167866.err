@@ -1,0 +1,11 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models_bbox_aug.py", line 168, in <module>
+    main()
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models_bbox_aug.py", line 139, in main
+    y_train_td = get_n_hot_encoding(train_df, labels_to_encode)
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models_bbox_aug.py", line 19, in get_n_hot_encoding
+    if row[l] == 1:
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pandas/core/series.py", line 1017, in __getitem__
+    check_dict_or_set_indexers(key)
+KeyboardInterrupt

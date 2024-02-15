@@ -1,0 +1,39 @@
+Loaded module: cuda/12.2
+  0%|          | 0/100 [00:00<?, ?it/s] 24%|██▍       | 24/100 [00:00<00:00, 239.56it/s] 49%|████▉     | 49/100 [00:00<00:00, 242.42it/s] 74%|███████▍  | 74/100 [00:00<00:00, 242.50it/s] 99%|█████████▉| 99/100 [00:00<00:00, 244.51it/s]100%|██████████| 100/100 [00:00<00:00, 243.35it/s]
+Skipping variable loading for optimizer 'adam', because it has 730 variables whereas the saved optimizer has 22 variables. 
+2024-02-13 16:33:13.181179: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-02-13 16:33:13.181290: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-02-13 16:33:13.244042: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-02-13 16:33:15.320242: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Your TensorFlow version is newer than 2.4.0 and so graph support has been removed in eager mode and some static graphs may not be supported. See PR #1483 for discussion.
+2024-02-13 16:33:46.737410: W external/tsl/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 616.00MiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/calculate_shap.py", line 80, in <module>
+    e = shap.DeepExplainer(model, background)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/__init__.py", line 84, in __init__
+    self.explainer = TFDeep(model, data, session, learning_phase_flags)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/shap/explainers/_deep/deep_tf.py", line 162, in __init__
+    self.expected_value = tf.reduce_mean(self.model(self.data), 0)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 123, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/lax/convolution.py", line 161, in conv_general_dilated
+    return conv_general_dilated_p.bind(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 444, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 447, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/core.py", line 935, in process_primitive
+    return primitive.impl(*tracers, **params)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/jax/_src/dispatch.py", line 87, in apply_primitive
+    outs = fun(*args)
+jaxlib.xla_extension.XlaRuntimeError: Exception encountered when calling Conv2D.call().
+
+[1mUNKNOWN: Failed to determine best cudnn convolution algorithm for:
+%cudnn-conv.1 = (f32[100,128,64,64]{3,2,1,0}, u8[0]{0}) custom-call(f32[100,384,64,64]{3,2,1,0} %transpose, f32[128,384,1,1]{3,2,1,0} %transpose.1), window={size=1x1}, dim_labels=bf01_oi01->bf01, custom_call_target="__cudnn$convForward", metadata={op_name="jit(conv_general_dilated)/jit(main)/conv_general_dilated[window_strides=(1, 1) padding=((0, 0), (0, 0)) lhs_dilation=(1, 1) rhs_dilation=(1, 1) dimension_numbers=ConvDimensionNumbers(lhs_spec=(0, 3, 1, 2), rhs_spec=(3, 2, 0, 1), out_spec=(0, 3, 1, 2)) feature_group_count=1 batch_group_count=1 precision=None preferred_element_type=None]" source_file="/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/nn.py" source_line=275}, backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0}
+
+Original error: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 645922816 bytes.
+
+To ignore this failure and try to use a fallback algorithm (which may have suboptimal performance), use XLA_FLAGS=--xla_gpu_strict_conv_algorithm_picker=false.  Please also file a bug for the root cause of failing autotuning.[0m
+
+Arguments received by Conv2D.call():
+  • inputs=jnp.ndarray(shape=(100, 64, 64, 384), dtype=float32)

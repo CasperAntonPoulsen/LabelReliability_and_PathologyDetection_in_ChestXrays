@@ -1,0 +1,14 @@
+Loaded module: cuda/12.1
+CUDA backend failed to initialize: Found cuBLAS version 120100, but JAX was built against version 120205, which is newer. The copy of cuBLAS that is installed must be at least as new as the version against which JAX was built. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/VisionTransformer.py", line 354, in <module>
+    if __name__ == "__main__":
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/VisionTransformer.py", line 301, in main
+    # Train model
+  File "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/VisionTransformer.py", line 183, in run_experiment
+    
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 118, in error_handler
+    return fn(*args, **kwargs)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/backend/jax/trainer.py", line 394, in fit
+    logs, state = self.train_function(state, data)
+KeyboardInterrupt
